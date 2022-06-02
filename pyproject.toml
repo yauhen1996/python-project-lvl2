@@ -9,10 +9,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-pytest = "^7.1.1"
-
-[tool.poetry.dev-dependencies]
-flake8 = "^4.0.1"
+pathlib2 = "^2.3.7"
 
 [tool.poetry.scripts]
 gendiff = "gendiff.scripts.gendiff:main"

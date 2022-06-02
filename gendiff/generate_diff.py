@@ -3,10 +3,8 @@ import re
 
 
 def generate_diff(f_1, f_2):
-    with open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file1.json") as f:
-        file1 = json.load(f)
-    with open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file2.json") as f:
-        file2 = json.load(f)
+    file1 = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file1.json"))
+    file2 = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file2.json"))
     dict1 = {}
     dict2 = {}
     file_1 = file1.items()

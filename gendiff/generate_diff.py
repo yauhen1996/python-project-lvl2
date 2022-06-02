@@ -13,9 +13,9 @@ def generate_diff(f_1, f_2):
     for item in list(set_f):
         if item in file_1 and item in file_2:
             dict1[f'  {item[0]}'] = item[1]
-        if item in file_1 and item not in file_2:
+        elif item in file_1 and item not in file_2:
             dict1[f'- {item[0]}'] = item[1]
-        if item in file_2 and item not in file_1:
+        else:
             dict2[f'+ {item[0]}'] = item[1]
     sort1 = sorted(dict1.items(), key=lambda x: x[0][2])
     sort2 = sorted(dict2.items(), key=lambda x: x[0][2])

@@ -14,7 +14,7 @@ jobs:
     - name: install2
       run: make install
     - name: coverage
-      uses: paambaati/codeclimate-action@v2.7.4
+      uses: paambaati/codeclimate-action@v2.7.5
       env:
         CC_TEST_REPORTER_ID: d76848783fd10b2043e730f8571e56b395ea4fc74d40324d05caadd91c842667      
       with:

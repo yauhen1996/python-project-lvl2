@@ -11,10 +11,7 @@ packages = [
 python = "^3.8"
 pathlib2 = "^2.3.7"
 flake8 = "^4.0.1"
-<<<<<<< HEAD
-=======
 pytest-cov = "^3.0.0"
->>>>>>> add
 pytest = "^7.1.2"
 
 [tool.poetry.scripts]

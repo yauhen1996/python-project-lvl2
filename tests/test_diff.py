@@ -9,7 +9,7 @@ import os
 
 @pytest.fixture
 def clear_res():
-    data = json.load(open(("/home/yauhen1996/python-project-lvl2/tests/fixtures/result.json")))
+    data = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/result.json"))
     result = json.dumps(dict(data), indent=2)
     clear = re.sub('\"|,', '', result)
     return clear

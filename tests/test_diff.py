@@ -15,17 +15,7 @@ def clear_res():
     return clear
 
 
-@pytest.fixture
-def data_1():
+def test_diff(clear_res):
     file_1 = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file.json"))
-    return file_1
-
-
-@pytest.fixture
-def data_2():
     file_2 = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file2.json"))
-    return file_2
-
-
-def test_diff(data_1, data_2, clear_res):
-    assert clear_res == generate_diff(data_1, data_2)
+    assert clear_res == generate_diff(file_1, file_2)

@@ -4,6 +4,7 @@ from gendiff.generate_diff import generate_diff
 import json
 import pytest
 import re
+import os
 
 
 @pytest.fixture
@@ -22,7 +23,7 @@ def data_2():
 
 @pytest.fixture
 def data_1():
-    file_1 = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file.json"))
+    file_1 = json.load(open(os.path.abspath('file.json')))
     return file_1
 
 

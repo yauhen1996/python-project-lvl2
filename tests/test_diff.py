@@ -16,14 +16,14 @@ def clear_res():
 
 @pytest.fixture
 def data_1():
-    file1 = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file1.json"))
-    return file1
+    file_1 = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file1.json"))
+    return file_1
 
 
 @pytest.fixture
 def data_2():
-    file2 = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file2.json"))
-    return file2
+    file_2 = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file2.json"))
+    return file_2
 
 
 def test_diff(data_1, data_2, clear_res):

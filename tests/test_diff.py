@@ -15,16 +15,15 @@ def clear_res():
 
 
 @pytest.fixture
-def data_1():
-    with open("file1.json", "r", encoding="utf-8") as f:
-        file_1 = json.load(f)
-    return file_1
-
-
-@pytest.fixture
 def data_2():
     file_2 = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file2.json"))
     return file_2
+
+
+@pytest.fixture
+def data_1():
+    file_1 = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file1.json"))
+    return file_1
 
 
 def test_diff(data_1, data_2, clear_res):

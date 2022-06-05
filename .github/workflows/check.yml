@@ -1,4 +1,4 @@
-name: Python package
+name: check
 
 on: 
   push:
@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
     - name: Setup python
       uses: actions/setup-python@v2
     - name: Install dependencies
@@ -15,10 +16,4 @@ jobs:
       run: make install
     - name: run test
       run: make test
-    - name: coverage
-      uses: paambaati/codeclimate-action@v3.0.0
-      env:
-        CC_TEST_REPORTER_ID: d76848783fd10b2043e730f8571e56b395ea4fc74d40324d05caadd91c842667      
-      with:
-        coverageCommand: make test-coverage
-        debug: true
+    

@@ -15,5 +15,5 @@ jobs:
     - name: install2
       run: make install
     - name: run test
-      run: make test
+      run: poetry run pytest
     

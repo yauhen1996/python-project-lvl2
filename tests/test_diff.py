@@ -22,7 +22,7 @@ def data_2():
 
 @pytest.fixture
 def data_1():
-    file_1 = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file1.json"))
+    file_1 = json.load(open("/home/yauhen1996/python-project-lvl2/tests/fixtures/file.json"))
     return file_1
 
 

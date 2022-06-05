@@ -27,5 +27,5 @@ def data_1():
     return file_1
 
 
-def test_diff(data_1, data_2, clear_res):
-    assert clear_res == generate_diff(data_1, data_2)
+def test_diff(data_2, data_1, clear_res):
+    assert clear_res == generate_diff(data_2, data_1)

@@ -1,12 +1,16 @@
 import json
 import re
+from gendiff.parser import parse
+
 
 
 def generate_diff(f_1, f_2):
     dict1 = {}
     dict2 = {}
-    file1 = f_1.items()
-    file2 = f_2.items()
+    pars1 = parse(f_1)
+    pars2 = parse(f_2)
+    file1 = pars1.items()
+    file2 = pars2.items()
     set_f = file1 | file2
     for item in list(set_f):
         if item in file1 and item in file2:

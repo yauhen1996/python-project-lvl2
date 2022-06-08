@@ -5,22 +5,7 @@ import pytest
 import json
 import yaml
 import re
-
-
-@pytest.fixture
-def data_j():
-    file1_j = json.load(open("tests/fixtures/file.json"))
-    file2_j = json.load(open("tests/fixtures/file2.json"))
-    return file1_j, file2_j
-
-
-@pytest.fixture
-def data_y():
-    with open("tests/fixtures/file1.yaml") as f:
-        file1_y = yaml.safe_load(f)
-    with open("tests/fixtures/file2.yml") as f:
-        file2_y = yaml.safe_load(f)
-    return file1_y, file2_y
+from gendiff.parser import parse
 
 
 
@@ -33,10 +18,13 @@ def result():
 
 
 
-def test_diff_json(data_j, data_y, result):
-    data1_j, data2_j = data_j
-    data1_y, data2_y = data_y
-    assert result == generate_diff(data1_j, data2_j)
-    assert result == generate_diff(data1_y, data2_y)
+def test_diff_json(result):
+    path1 = "tests/fixtures/file.json"
+    path2 = "tests/fixtures/file2.json"
+    path3 = "tests/fixtures/file1.yaml"
+    path4 = "tests/fixtures/file2.yml"
+
+    assert generate_diff(path1, path2) == result
+    assert generate_diff(path3, path4) == result
 
 

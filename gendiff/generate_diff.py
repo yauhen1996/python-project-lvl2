@@ -3,17 +3,15 @@ import re
 
 
 def generate_diff(f_1, f_2):
-    file1 = json.load(open("tests/fixtures/file.json"))
-    file2 = json.load(open("tests/fixtures/file2.json"))
     dict1 = {}
     dict2 = {}
-    file_1 = file1.items()
-    file_2 = file2.items()
-    set_f = file_1 | file_2
+    file1 = f_1.items()
+    file2 = f_2.items()
+    set_f = file1 | file2
     for item in list(set_f):
-        if item in file_1 and item in file_2:
+        if item in file1 and item in file2:
             dict1[f'  {item[0]}'] = item[1]
-        elif item in file_1 and item not in file_2:
+        elif item in file1 and item not in file2:
             dict1[f'- {item[0]}'] = item[1]
         else:
             dict2[f'+ {item[0]}'] = item[1]

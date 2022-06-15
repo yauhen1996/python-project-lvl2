@@ -1,0 +1,116 @@
+{
+  "common": {
+    "type": "nested",
+    "value": 0,
+    "children": {
+      "follow": {
+        "type": "added",
+        "value": false,
+        "children": 0
+      },
+      "setting1": {
+        "type": "unchanged",
+        "value": "Value 1",
+        "children": 0
+      },
+      "setting2": {
+        "type": "deleted",
+        "value": 200,
+        "children": 0
+      },
+      "setting3": {
+        "type": "changed",
+        "value_1": true,
+        "value_2": null,
+        "children": 0
+      },
+      "setting4": {
+        "type": "added",
+        "value": "blah blah",
+        "children": 0
+      },
+      "setting5": {
+        "type": "added",
+        "value": {
+          "key5": "value5"
+        },
+        "children": 0
+      },
+      "setting6": {
+        "type": "nested",
+        "value": 0,
+        "children": {
+          "doge": {
+            "type": "nested",
+            "value": 0,
+            "children": {
+              "wow": {
+                "type": "changed",
+                "value_1": "",
+                "value_2": "so much",
+                "children": 0
+              }
+            }
+          },
+          "key": {
+            "type": "unchanged",
+            "value": "value",
+            "children": 0
+          },
+          "ops": {
+            "type": "added",
+            "value": "vops",
+            "children": 0
+          }
+        }
+      }
+    }
+  },
+  "group1": {
+    "type": "nested",
+    "value": 0,
+    "children": {
+      "baz": {
+        "type": "changed",
+        "value_1": "bas",
+        "value_2": "bars",
+        "children": 0
+      },
+      "foo": {
+        "type": "unchanged",
+        "value": "bar",
+        "children": 0
+      },
+      "nest": {
+        "type": "changed",
+        "value_1": {
+          "key": "value"
+        },
+        "value_2": "str",
+        "children": 0
+      }
+    }
+  },
+  "group2": {
+    "type": "deleted",
+    "value": {
+      "abc": 12345,
+      "deep": {
+        "id": 45
+      }
+    },
+    "children": 0
+  },
+  "group3": {
+    "type": "added",
+    "value": {
+      "deep": {
+        "id": {
+          "number": 45
+        }
+      },
+      "fee": 100500
+    },
+    "children": 0
+  }
+}

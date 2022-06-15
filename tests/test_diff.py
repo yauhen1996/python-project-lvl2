@@ -2,10 +2,6 @@
 
 from gendiff.generate_diff import generate_diff
 import pytest
-import json
-from gendiff.parser import parse
-from gendiff.diff import diff
-from gendiff.format.stylish import stylish
 
 
 
@@ -22,7 +18,22 @@ def result_nested():
     return res2
 
 
-def test_diff_json(result_plain, result_nested):
+
+@pytest.fixture
+def result_json():
+    res3 = open("tests/fixtures/result_json.txt").read()
+    return res3
+
+
+
+@pytest.fixture
+def result_js():
+    res4 = open("tests/fixtures/result_json.txt").read()
+    return res4
+
+
+
+def test_diff_json(result_plain, result_nested, result_json, result_js):
     path1 = "tests/fixtures/file.json"
     path2 = "tests/fixtures/file2.json"
     path3 = "tests/fixtures/file1.yaml"
@@ -32,8 +43,12 @@ def test_diff_json(result_plain, result_nested):
     path7 = "tests/fixtures/nested1_y.yml"
     path8 = "tests/fixtures/nested2_y.yml"
     
-    assert generate_diff(path1, path2) == result_plain[:-1]
-    assert generate_diff(path3, path4) == result_plain[:-1]
-    assert generate_diff(path5, path6) == result_nested[:-1]
-    assert generate_diff(path7, path8) == result_nested[:-1]
+
+    assert generate_diff(path5, path6, format="stylish") == result_nested[:-1]
+    assert generate_diff(path5, path6, format="plain") == result_plain[:-1]
+    assert generate_diff(path5, path6, format="json") == result_json[:-1]
+
+    assert generate_diff(path7, path8, format="stylish") == result_nested[:-1]
+    assert generate_diff(path7, path8, format="plain") == result_plain[:-1]
+    assert generate_diff(path7, path8, format="json") == result_json[:-1] 
 

@@ -12,7 +12,7 @@ res_json = open("tests/fixtures/result_json.txt").read()
 
 
 
-def test_diff_json():
+def test_diff():
     path1 = "tests/fixtures/file.json"
     path2 = "tests/fixtures/file2.json"
 
@@ -25,8 +25,6 @@ def test_diff_json():
     path7 = "tests/fixtures/nested1_y.yml"
     path8 = "tests/fixtures/nested2_y.yml"
     
-    assert generate_diff(path1, path2, format="stylish") == res_js[:-1]
-    assert generate_diff(path3, path4, format="stylish") == res_js[:-1]
 
     assert generate_diff(path5, path6, format="stylish") == res_nested[:-1]
     assert generate_diff(path5, path6, format="plain") == res_plain[:-1]

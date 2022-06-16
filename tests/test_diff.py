@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from gendiff.generate_diff import generate_diff
 import pytest
 
@@ -25,12 +23,14 @@ def test_diff():
     path7 = "tests/fixtures/nested1_y.yml"
     path8 = "tests/fixtures/nested2_y.yml"
     
+    assert generate_diff(path1, path2, "stylish") == res_js[:-1]
+    assert generate_diff(path3, path4, "stylish") == res_js[:-1]
 
-    assert generate_diff(path5, path6, format="stylish") == res_nested[:-1]
-    assert generate_diff(path5, path6, format="plain") == res_plain[:-1]
-    assert generate_diff(path5, path6, format="json") == res_json[:-1]
+    assert generate_diff(path5, path6, "stylish") == res_nested[:-1]
+    assert generate_diff(path5, path6, "plain") == res_plain[:-1]
+    assert generate_diff(path5, path6, "json") == res_json[:-1]
 
-    assert generate_diff(path7, path8, format="stylish") == res_nested[:-1]
-    assert generate_diff(path7, path8, format="plain") == res_plain[:-1]
-    assert generate_diff(path7, path8, format="json") == res_json[:-1] 
+    assert generate_diff(path7, path8, "stylish") == res_nested[:-1]
+    assert generate_diff(path7, path8, "plain") == res_plain[:-1]
+    assert generate_diff(path7, path8, "json") == res_json[:-1] 
 

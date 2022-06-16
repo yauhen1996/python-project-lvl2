@@ -10,7 +10,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.8"
 pathlib2 = "^2.3.7"
-flake8 = "^4.0.1"
+flake8 = "^3.8.3"
 pytest-cov = "^3.0.0"
 pytest = "^6.0.2"
 PyYAML = "^6.0"

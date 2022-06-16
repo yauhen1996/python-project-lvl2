@@ -5,50 +5,33 @@ import pytest
 
 
 
-@pytest.fixture
-def result_plain():
-    res1 = open("tests/fixtures/result_plain.txt").read()
-    return res1 
+res_js = open("tests/fixtures/result_js.txt").read()
+res_nested = open("tests/fixtures/result_nested.txt").read()
+res_plain = open("tests/fixtures/result_plain.txt").read()
+res_json = open("tests/fixtures/result_json.txt").read()
 
 
 
-@pytest.fixture
-def result_nested():
-    res2 = open("tests/fixtures/result_nested.txt").read()
-    return res2
-
-
-
-@pytest.fixture
-def result_json():
-    res3 = open("tests/fixtures/result_json.txt").read()
-    return res3
-
-
-
-@pytest.fixture
-def result_js():
-    res4 = open("tests/fixtures/result_json.txt").read()
-    return res4
-
-
-
-def test_diff_json(result_plain, result_nested, result_json, result_js):
+def test_diff_json():
     path1 = "tests/fixtures/file.json"
     path2 = "tests/fixtures/file2.json"
+
     path3 = "tests/fixtures/file1.yaml"
     path4 = "tests/fixtures/file2.yml"
+
     path5 = "tests/fixtures/nested1_j.json"
     path6 = "tests/fixtures/nested2_j.json"
+
     path7 = "tests/fixtures/nested1_y.yml"
     path8 = "tests/fixtures/nested2_y.yml"
     
+    assert generate_diff(path1, path2, format="stylish") == res_js[:-1]
 
-    assert generate_diff(path5, path6, format="stylish") == result_nested[:-1]
-    assert generate_diff(path5, path6, format="plain") == result_plain[:-1]
-    assert generate_diff(path5, path6, format="json") == result_json[:-1]
+    assert generate_diff(path5, path6, format="stylish") == res_nested[:-1]
+    assert generate_diff(path5, path6, format="plain") == res_plain[:-1]
+    assert generate_diff(path5, path6, format="json") == res_json[:-1]
 
-    assert generate_diff(path7, path8, format="stylish") == result_nested[:-1]
-    assert generate_diff(path7, path8, format="plain") == result_plain[:-1]
-    assert generate_diff(path7, path8, format="json") == result_json[:-1] 
+    assert generate_diff(path7, path8, format="stylish") == res_nested[:-1]
+    assert generate_diff(path7, path8, format="plain") == res_plain[:-1]
+    assert generate_diff(path7, path8, format="json") == res_json[:-1] 
 

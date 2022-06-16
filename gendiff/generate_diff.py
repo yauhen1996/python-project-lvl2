@@ -1,3 +1,4 @@
+__all__ = ["generate_diff"]
 from gendiff.parser import parse
 from gendiff.diff import diff
 from gendiff.formatters.stylish import stylish

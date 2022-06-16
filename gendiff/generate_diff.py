@@ -5,13 +5,11 @@ from gendiff.formatters.plain import plain
 from gendiff.formatters.json import json_
 
 
-def generate_diff(data_1, data_2, format="stylish"):
-    file_1 = parse(data_1)
-    file_2 = parse(data_2)
+def generate_diff(file_1, file_2, format="stylish"):
     if format == "stylish":
-        return stylish(diff(file_1, file_2))
+        return stylish(diff(parse(file_1), parse(file_2)))
     elif format == "plain":
-        return plain(diff(file_1, file_2))
+        return plain(diff(parse(file_1), parse(file_2)))
     elif format == "json":
-        return json_(diff(file_1, file_2))
+        return json_(diff(parse(file_1), parse(file_2)))
     

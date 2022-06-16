@@ -16,7 +16,7 @@ def test_diff_json():
     path1 = "tests/fixtures/file.json"
     path2 = "tests/fixtures/file2.json"
 
-    path3 = "tests/fixtures/file1.yaml"
+    path3 = "tests/fixtures/file1.yml"
     path4 = "tests/fixtures/file2.yml"
 
     path5 = "tests/fixtures/nested1_j.json"
@@ -26,6 +26,7 @@ def test_diff_json():
     path8 = "tests/fixtures/nested2_y.yml"
     
     assert generate_diff(path1, path2, format="stylish") == res_js[:-1]
+    assert generate_diff(path3, path4, format="stylish") == res_js[:-1]
 
     assert generate_diff(path5, path6, format="stylish") == res_nested[:-1]
     assert generate_diff(path5, path6, format="plain") == res_plain[:-1]

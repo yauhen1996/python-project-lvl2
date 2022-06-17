@@ -13,4 +13,3 @@ def generate_diff(file_1, file_2, format="stylish"):
         return plain(diff(parse(file_1), parse(file_2)))
     elif format == "json":
         return json_(diff(parse(file_1), parse(file_2)))
-    

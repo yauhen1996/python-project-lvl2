@@ -23,4 +23,4 @@ def test_diff():
     assert generate_diff(path5, path6, "json") == res_json[:-1]
     assert generate_diff(path7, path8, "stylish") == res_nested[:-1]
     assert generate_diff(path7, path8, "plain") == res_plain[:-1]
-    assert generate_diff(path7, path8, "json") == res_json[:-1] 
+    assert generate_diff(path7, path8, "json") == res_json[:-1]
